@@ -1,0 +1,102 @@
+/* Skills pill glow and animated border styles */
+.pill-wrap { position: relative; display: inline-block; border-radius: 9999px; }
+.pill-border {
+  position: absolute; inset: -2px; border-radius: 9999px; z-index: 0; pointer-events: none;
+}
+.pill-border::before {
+  content: '';
+  position: absolute; inset: 0; border-radius: inherit;
+  /* create a thin border using padding + mask so the gradient only shows on the stroke */
+  padding: 1px;
+  background: linear-gradient(90deg, var(--g1, #CFEFDE), var(--g2, #A8C7A3), var(--g3, #E6F6EA), var(--g1, #CFEFDE));
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  /* no heavy blur — keep a thin crisp border; add subtle glow via box-shadow */
+  filter: saturate(120%);
+  opacity: 0.95;
+  transform: translateZ(0);
+  animation: borderFlow 6s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.pill-border::after {
+  /* subtle soft glow around border */
+  content: '';
+  position: absolute; inset: -6px; border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(168,199,163,0.14), transparent 40%);
+  filter: blur(6px);
+  opacity: 0.9;
+}
+
+.pill-inner {
+  position: relative; z-index: 10; display: inline-flex; align-items: center; justify-content: center;
+  padding: 0.36rem 0.9rem; border-radius: 9999px;
+  background: rgba(226, 244, 233, 0.75); /* pale sage tint */
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 6px 20px rgba(15,20,12,0.06);
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1), box-shadow 220ms ease, background-color 200ms ease;
+}
+.pill-wrap:hover .pill-inner { transform: translateY(-4px) scale(1.02); background: rgba(233, 248, 238, 0.9); box-shadow: 0 12px 30px rgba(15,20,12,0.09); }
+
+.pill-text { color: #0A0A0A; font-weight: 500; font-size: 0.92rem; white-space: nowrap }
+
+/* subtle inner highlight */
+.pill-inner::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0)); }
+
+/* reverse animation option via attribute --dir set by component */
+.pill-wrap[style*='--dir: -1'] .pill-border::before { animation-direction: reverse }
+
+@media (max-width: 640px){
+  .pill-text { font-size: 0.82rem }
+  .pill-inner { padding: 0.28rem 0.7rem }
+  .pill-border::before { filter: blur(4px); }
+}
+
+/* Marquee track for horizontal rows */
+.marquee-track {
+  display: flex; align-items: center; gap: 0.75rem;
+  will-change: transform;
+  animation-name: marquee-left;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--marquee-duration, 36s);
+}
+.marquee-track.rev { animation-name: marquee-right; }
+.marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marquee-left {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-50%,0,0); }
+}
+@keyframes marquee-right {
+  0% { transform: translate3d(-50%,0,0); }
+  100% { transform: translate3d(0,0,0); }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce){
+  .marquee-track { animation-play-state: paused !important; }
+  .pill-wrap { transition: none !important; }
+}
+
+/* fade overlays at row ends to soften entering/exiting pills */
+.marquee-container { position: relative; }
+.marquee-fade { position: absolute; top: 0; bottom: 0; width: 5.5rem; z-index: 30; pointer-events: none; }
+.marquee-fade-left { left: 0; background: linear-gradient(90deg, rgba(247,249,245,1), rgba(247,249,245,0)); }
+.marquee-fade-right { right: 0; background: linear-gradient(270deg, rgba(247,249,245,1), rgba(247,249,245,0)); }
+
+@media (max-width: 768px){
+  .marquee-fade { width: 3.2rem }
+}
+
+
