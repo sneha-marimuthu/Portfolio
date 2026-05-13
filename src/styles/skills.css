@@ -8,7 +8,7 @@
   position: absolute; inset: 0; border-radius: inherit;
   /* create a thin border using padding + mask so the gradient only shows on the stroke */
   padding: 1px;
-  background: linear-gradient(90deg, var(--g1, #CFEFDE), var(--g2, #A8C7A3), var(--g3, #E6F6EA), var(--g1, #CFEFDE));
+  background: linear-gradient(90deg, var(--g1, #dbeae3), var(--g2, #a9bba6), var(--g3, #edf6ef), var(--g1, #dff0e7));
   background-size: 200% 100%;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -64,8 +64,13 @@
 
 /* Marquee track for horizontal rows */
 .marquee-track {
-  display: flex; align-items: center; gap: 0.75rem;
+  display: inline-flex; align-items: center; gap: 0;
+  width: max-content;
+  min-width: max-content;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
   animation-name: marquee-left;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -73,6 +78,7 @@
 }
 .marquee-track.rev { animation-name: marquee-right; }
 .marquee-track:hover { animation-play-state: paused; }
+.marquee-group { display: inline-flex; align-items: center; gap: 0.75rem; flex-shrink: 0; padding-right: 0.75rem; white-space: nowrap; }
 
 @keyframes marquee-left {
   0% { transform: translate3d(0,0,0); }

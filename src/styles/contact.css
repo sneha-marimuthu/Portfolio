@@ -1,0 +1,70 @@
+.contact-section {
+  padding: 5rem 1rem 4rem;
+  background: linear-gradient(180deg, #f7f9f5 0%, #f2f7f1 100%);
+}
+.contact-shell { max-width: 1200px; margin: 0 auto; }
+.contact-layout { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+@media (min-width: 1024px) { .contact-layout { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+
+.contact-heading { color: #111712; font-size: clamp(1.8rem, 2.2vw, 2.45rem); font-weight: 600; }
+.contact-subtitle { margin-top: 0.75rem; color: #2d3931; line-height: 1.66; max-width: 620px; }
+.contact-cards { margin-top: 1rem; display: grid; gap: 0.72rem; }
+.contact-card {
+  display: flex; align-items: center; gap: 0.65rem;
+  border-radius: 14px; padding: 0.8rem;
+  border: 1px solid rgba(255,255,255,0.75);
+  background: linear-gradient(165deg, rgba(239,247,240,0.9), rgba(255,255,255,0.74));
+  backdrop-filter: blur(10px) saturate(115%); -webkit-backdrop-filter: blur(10px) saturate(115%);
+  box-shadow: 0 10px 26px rgba(14,28,20,0.08);
+}
+.contact-card-icon, .social-icon-btn {
+  width: 2rem; height: 2rem; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.82); background: rgba(231,245,235,0.8); color: #122017;
+}
+.contact-card-label { color: #31503f; font-size: 0.8rem; }
+.contact-card-value { color: #101612; font-size: 0.9rem; }
+
+.resume-btn {
+  margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.45rem;
+  border-radius: 9999px; padding: 0.5rem 0.9rem; color: #102017; font-size: 0.88rem; font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.82); background: rgba(231,245,235,0.86);
+}
+.social-icons-row { margin-top: 0.9rem; display: flex; gap: 0.55rem; }
+.social-icon-btn { transition: transform 220ms ease, box-shadow 220ms ease; }
+.social-icon-btn:hover { box-shadow: 0 10px 18px rgba(15,31,22,0.14); }
+
+.contact-form-card {
+  border-radius: 16px; padding: 1rem;
+  border: 1px solid rgba(255,255,255,0.75);
+  background: linear-gradient(165deg, rgba(239,247,240,0.9), rgba(255,255,255,0.74));
+  backdrop-filter: blur(10px) saturate(115%); -webkit-backdrop-filter: blur(10px) saturate(115%);
+  box-shadow: 0 12px 30px rgba(14,28,20,0.08);
+}
+.contact-label { display: block; margin-top: 0.55rem; margin-bottom: 0.35rem; color: #1f3128; font-size: 0.86rem; }
+.contact-input {
+  width: 100%; border-radius: 12px; padding: 0.62rem 0.72rem; font-size: 0.9rem; color: #111712;
+  background: rgba(245,251,246,0.7); border: 1px solid rgba(195,216,201,0.8); outline: none;
+  transition: box-shadow 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.contact-input:focus { border-color: rgba(119,166,134,0.8); box-shadow: 0 0 0 4px rgba(149,199,163,0.2); transform: translateZ(0); }
+.contact-textarea { resize: vertical; min-height: 130px; }
+.contact-error { color: #8e2b2b; font-size: 0.78rem; margin-top: 0.28rem; }
+.send-btn {
+  margin-top: 0.9rem; width: 100%; border-radius: 12px; padding: 0.62rem 0.8rem;
+  background: #dceee1; color: #102017; border: 1px solid #bfd8c6; font-weight: 600; font-size: 0.9rem;
+}
+.send-btn:disabled { opacity: 0.72; cursor: not-allowed; }
+.contact-success { margin-top: 0.65rem; color: #1e5f37; font-size: 0.84rem; animation: fadePulse 0.36s ease; }
+@keyframes fadePulse { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.footer-section { padding: 1.5rem 1rem 1.2rem; background: #f2f7f1; border-top: 1px solid rgba(120,150,130,0.2); }
+.footer-shell { max-width: 1200px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1fr; gap: 0.8rem; align-items: center; }
+@media (min-width: 900px) { .footer-top { grid-template-columns: 1.2fr 1fr auto; } }
+.footer-name { color: #101612; font-size: 1rem; font-weight: 600; }
+.footer-tagline { margin-top: 0.25rem; color: #2c3830; font-size: 0.85rem; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 0.65rem 0.9rem; }
+.footer-nav-link { color: #1c2f24; font-size: 0.84rem; text-decoration: underline; text-underline-offset: 4px; }
+.footer-socials { display: flex; gap: 0.5rem; }
+.footer-bottom { margin-top: 0.95rem; padding-top: 0.8rem; border-top: 1px solid rgba(118,151,127,0.22); display: flex; flex-direction: column; gap: 0.3rem; color: #324138; font-size: 0.78rem; }
+@media (min-width: 900px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }

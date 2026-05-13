@@ -1,0 +1,91 @@
+.experience-section {
+  padding: 5.5rem 1rem;
+  background: linear-gradient(180deg, #f6f9f5 0%, #f2f7f1 100%);
+}
+.experience-shell { max-width: 1200px; margin: 0 auto; }
+.experience-heading { color: #111712; font-size: clamp(1.85rem, 2.2vw, 2.5rem); font-weight: 600; }
+.experience-subtitle { margin-top: 0.75rem; max-width: 760px; line-height: 1.65; color: #2e3932; }
+
+.experience-stack { margin-top: 2rem; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+@media (min-width: 1024px) { .experience-stack { gap: 1.2rem; } }
+
+.experience-card-block {
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.72);
+  background: linear-gradient(165deg, rgba(239, 247, 240, 0.9), rgba(255, 255, 255, 0.74));
+  backdrop-filter: blur(10px) saturate(115%);
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
+  box-shadow: 0 10px 30px rgba(14, 28, 20, 0.08);
+  padding: 1rem;
+  transition: box-shadow 240ms ease;
+}
+.experience-card-block:hover { box-shadow: 0 16px 36px rgba(14, 28, 20, 0.12); }
+
+.experience-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.experience-duration { color: #3f5a4a; font-size: 0.82rem; font-weight: 500; }
+.experience-role { margin-top: 0.28rem; color: #101612; font-size: 1.05rem; font-weight: 600; }
+.experience-company { margin-top: 0.2rem; color: #2f473a; font-size: 0.9rem; }
+.experience-description { margin-top: 0.65rem; color: #27352d; line-height: 1.6; font-size: 0.9rem; }
+.experience-points { margin-top: 0.65rem; padding-left: 1rem; color: #27352d; font-size: 0.88rem; line-height: 1.6; }
+.experience-tech { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+.experience-certificate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.82);
+  background: rgba(231, 245, 235, 0.78);
+  color: #15241b;
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+.experience-certificate-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: rgba(240, 251, 244, 0.9);
+  box-shadow: 0 10px 18px rgba(18, 38, 27, 0.14);
+}
+
+.certificate-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(8, 14, 10, 0.35);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.certificate-modal {
+  width: min(880px, 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.72);
+  background: linear-gradient(165deg, rgba(241, 249, 243, 0.95), rgba(255, 255, 255, 0.86));
+  box-shadow: 0 28px 56px rgba(8, 20, 13, 0.28);
+  position: relative;
+  overflow: hidden;
+}
+.certificate-modal-close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.84);
+  background: rgba(255,255,255,0.72);
+  color: #132019;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.certificate-modal-image { width: 100%; max-height: 72vh; object-fit: contain; background: #f8faf8; }
+.certificate-modal-meta { padding: 0.9rem; color: #1d2b23; }

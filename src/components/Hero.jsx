@@ -24,7 +24,7 @@ export default function Hero(){
             <Typewriter phrases={phrases} />
           </div>
 
-          <p className="mt-6 text-gray-700 max-w-xl">Minimal, professional portfolio reflecting a nature-balanced palette and premium developer style. Smooth animations and responsive layout.</p>
+          <p className="mt-6 text-gray-700 max-w-xl">Passionate Full Stack Developer crafting clean, user-focused digital experiences. Consistent learner driven by innovation, problem-solving, and modern technology.</p>
 
           <SocialButtons />
         </motion.div>
