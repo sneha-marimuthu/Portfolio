@@ -3,7 +3,8 @@ import { defineConfig } from 'vite'
 // Dynamically import @vitejs/plugin-react when available to avoid
 // hard dependency conflicts during dev install.
 export default defineConfig(async () => {
-  const plugins = []
+  plugins: [react()],
+  base: '/portfolio/'
   try {
     const mod = await import('@vitejs/plugin-react')
     if (mod && mod.default) plugins.push(mod.default())
