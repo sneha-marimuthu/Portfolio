@@ -33,7 +33,7 @@ export const contactItems = [
 
 export const resumeItem = {
   label: 'Resume',
-  href: '/resume.pdf',
+  href: `${import.meta.env.BASE_URL}resume.pdf`,
   icon: FiDownload,
 }
 

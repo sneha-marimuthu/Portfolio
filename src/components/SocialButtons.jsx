@@ -9,6 +9,8 @@ const IconButton = ({ href, children, label }) => (
 )
 
 export default function SocialButtons(){
+  const resumeHref = `${import.meta.env.BASE_URL}resume.pdf`
+
   return (
     <div className="flex flex-wrap gap-3 mt-6">
       <IconButton href="https://linkedin.com/in/sneha-marimuthu" label="LinkedIn">
@@ -20,7 +22,7 @@ export default function SocialButtons(){
       <IconButton href="mailto:mailsnehamarimuthu326@gmail.com" label="Email">
         <FaEnvelope />
       </IconButton>
-      <IconButton href="/resume.pdf" label="Resume">
+      <IconButton href={resumeHref} label="Resume">
         <FaDownload />
       </IconButton>
     </div>
