@@ -1,13 +1,15 @@
 .contact-section {
   padding: 5rem 1rem 4rem;
   background: linear-gradient(180deg, #f7f9f5 0%, #f2f7f1 100%);
+  display: flex; justify-content: center; align-items: center;
 }
-.contact-shell { max-width: 1200px; margin: 0 auto; }
+.contact-shell { width: 100%; max-width: 760px; margin: 0 auto; text-align: center; }
 .contact-layout { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
 @media (min-width: 1024px) { .contact-layout { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+.simple-contact { display: flex; justify-content: center; }
 
 .contact-heading { color: #111712; font-size: clamp(1.8rem, 2.2vw, 2.45rem); font-weight: 600; }
-.contact-subtitle { margin-top: 0.75rem; color: #2d3931; line-height: 1.66; max-width: 620px; }
+.contact-subtitle { margin: 0.75rem auto 0; color: #2d3931; line-height: 1.66; max-width: 620px; }
 .contact-cards { margin-top: 1rem; display: grid; gap: 0.72rem; }
 .contact-card {
   display: flex; align-items: center; gap: 0.65rem;
@@ -29,7 +31,29 @@
   border-radius: 9999px; padding: 0.5rem 0.9rem; color: #102017; font-size: 0.88rem; font-weight: 500;
   border: 1px solid rgba(255,255,255,0.82); background: rgba(231,245,235,0.86);
 }
-.social-icons-row { margin-top: 0.9rem; display: flex; gap: 0.55rem; }
+.services-offered {
+  margin: 1.15rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+}
+.service-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.4rem;
+  border-radius: 9999px;
+  padding: 0.58rem 0.9rem;
+  color: #102017;
+  font-size: 0.86rem;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.82);
+  background: linear-gradient(165deg, rgba(239,247,240,0.9), rgba(255,255,255,0.76));
+  box-shadow: 0 10px 24px rgba(14,28,20,0.07);
+}
+.social-icons-row { margin-top: 0.9rem; display: flex; justify-content: center; gap: 0.55rem; }
 .social-icon-btn { transition: transform 220ms ease, box-shadow 220ms ease; }
 .social-icon-btn:hover { box-shadow: 0 10px 18px rgba(15,31,22,0.14); }
 

@@ -18,7 +18,7 @@ export default function Achievements() {
           </p>
 
           <div className="achievements-layout">
-            <div>
+            <div className="achievements-group">
               <h3 className="achievements-col-title">Achievements</h3>
               <div className="achievements-list">
                 {achievementData.map((item) => (
@@ -27,7 +27,7 @@ export default function Achievements() {
               </div>
             </div>
 
-            <div>
+            <div className="achievements-group">
               <h3 className="achievements-col-title">Certifications</h3>
               <div className="certifications-list">
                 {certificateData.map((item) => (

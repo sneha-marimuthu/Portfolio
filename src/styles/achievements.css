@@ -6,16 +6,33 @@
 .achievements-heading { color: #111712; font-size: clamp(1.85rem, 2.2vw, 2.5rem); font-weight: 600; }
 .achievements-subtitle { margin-top: 0.75rem; max-width: 820px; line-height: 1.65; color: #2e3932; }
 
-.achievements-layout { margin-top: 2rem; display: grid; grid-template-columns: 1fr; gap: 1.3rem; }
-@media (min-width: 1024px) { .achievements-layout { grid-template-columns: 1fr 1fr; gap: 1.4rem; } }
+.achievements-layout { margin-top: 2rem; display: grid; grid-template-columns: 1fr; gap: 1.6rem; }
+.achievements-group { min-width: 0; }
 
 .achievements-col-title { color: #132019; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.7rem; }
-.achievements-list, .certifications-list { display: grid; gap: 0.82rem; }
+.achievements-list, .certifications-list {
+  display: flex;
+  gap: 0.82rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding: 0.15rem 0.1rem 0.8rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(81, 113, 92, 0.35) transparent;
+}
+.achievements-list::-webkit-scrollbar, .certifications-list::-webkit-scrollbar { height: 8px; }
+.achievements-list::-webkit-scrollbar-track, .certifications-list::-webkit-scrollbar-track { background: transparent; }
+.achievements-list::-webkit-scrollbar-thumb, .certifications-list::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: rgba(81, 113, 92, 0.3);
+}
 
 .achievement-card, .certification-card {
   display: flex;
   align-items: flex-start;
   gap: 0.7rem;
+  flex: 0 0 min(320px, 86vw);
+  scroll-snap-align: start;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.74);
   background: linear-gradient(165deg, rgba(239, 247, 240, 0.9), rgba(255, 255, 255, 0.74));

@@ -3,6 +3,25 @@ import coirplusCertificate from '../assets/certificates/coirplus-certificate.jpg
 
 export const internships = [
   {
+    id: 'coirplus-fullstack',
+    role: 'Full Stack Development Internship Project',
+    company: 'CoirPlus',
+    duration: 'Internship Project',
+    description:
+      'Built and deployed a full-stack billing system with instant PDF invoice generation and dynamic product pricing retrieval from Excel via Google Cloud API with <2ms low-latency processing.',
+    responsibilities: [
+      'Built full-stack billing system',
+      'PDF invoice generation',
+      'Integrated Excel-based workflows',
+      'Developed responsive UI and backend APIs',
+    ],
+    technologies: ['React.js', 'Flask', 'Python', 'Excel Integration', 'GitHub'],
+    certificate: {
+      label: 'View Certificate',
+      file: coirplusCertificate,
+    },
+  },
+  {
     id: 'codsoft-java',
     role: 'Java Development Intern',
     company: 'CodSoft',
@@ -21,23 +40,5 @@ export const internships = [
       file: codsoftCertificate,
     },
   },
-  {
-    id: 'coirplus-fullstack',
-    role: 'Full Stack Development Internship Project',
-    company: 'CoirPlus',
-    duration: 'Internship Project',
-    description:
-      'Developed the PremiumBills invoice management platform to automate billing workflows, PDF invoice generation, and responsive financial management operations.',
-    responsibilities: [
-      'Built full-stack invoice management system',
-      'Automated PDF invoice generation',
-      'Integrated Excel-based workflows',
-      'Developed responsive UI and backend APIs',
-    ],
-    technologies: ['React.js', 'Flask', 'Python', 'Excel Integration', 'GitHub'],
-    certificate: {
-      label: 'View Certificate',
-      file: coirplusCertificate,
-    },
-  },
+  
 ]
