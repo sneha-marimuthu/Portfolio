@@ -15,6 +15,21 @@ npm install
 npm run dev
 ```
 
+Production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+GitHub Pages deployment:
+
+- The site is configured for `https://sneha-marimuthu.github.io/Portfolio`.
+- `vite.config.mjs` uses `base: '/Portfolio/'`, so built assets load from the correct GitHub Pages project path.
+- Push to `main` and the GitHub Actions workflow in `.github/workflows/deploy.yml` will build and deploy the `dist` folder.
+- In the repository settings, set Pages source to `GitHub Actions`.
+- For manual deployment from your machine, run `npm run deploy`.
+
 Files to inspect:
 - [src/components/Navbar.jsx](src/components/Navbar.jsx)
 - [src/components/Hero.jsx](src/components/Hero.jsx)
